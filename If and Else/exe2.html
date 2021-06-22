@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policia Federal</title>
+</head>
+<style>
+    body {
+        background-color: rgb(105, 105, 173);
+        color: white;
+        font: normal 18pt Arial;
+    }
+
+</style>
+<body>
+    <h1>Passaporte</h1>
+    Em qual pais você nasceu: <input type="text" name="textp" id="textp">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+    </div>
+
+        <script>
+            function verificar () {
+            var textp = window.document.querySelector('input#textp')
+            var res = window.document.querySelector('div#res')
+            var pais = String(textp.value)
+            if(pais != 'Brasil'){
+                res.innerHTML += `<p>Você é um Estrangeiro. Seja bem vindo ao Brasil!<p>`
+            }                               
+            else if (pais == 'Brasil'){
+                res.innerHTML += `<p>Sua Nacionalidade é Brasileira. Bem vindo de volta!<p>`
+            }
+        }
+        </script>
+</body>
+</html>
